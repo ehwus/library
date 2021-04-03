@@ -19,12 +19,12 @@ body {
 }
 
 .app-name {
-  font-size: 60px;
+  font-size: 4em;
   color: #f9f6f5;
 }
 
 .tagline {
-  font-size: 21px;
+  font-size: 2em;
   color: #f9f6f5;
   font-weight: lighter;
 }
@@ -34,12 +34,25 @@ hr {
 }
 
 #books li {
-  font-size: 21px;
+  font-size: 1.2em;
   color: #f9f6f5;
 }
 
 .booklist {
   height: 70%;
+}
+
+button {
+  background: #81aec1;
+  border: 1px solid #81aec1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #f9f6f5;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 #newBookForm {
