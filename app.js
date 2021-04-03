@@ -14,12 +14,18 @@ function addBookToLibrary() {
   displayAllBooks();
 }
 
+function removeBookFromLibrary(id) {
+  myLibrary.splice(id, 1);
+  displayAllBooks();
+}
+
 function displayAllBooks() {
   const books = document.getElementById('books');
   books.innerHTML = '';
 
-  myLibrary.forEach((book) => {
+  myLibrary.forEach((book, index) => {
     let bookHTML = document.createElement('LI');
+    bookHTML.id = index;
     let readStatusString = book.read ? 'Read' : 'Unread';
     bookHTML.innerHTML = `${book.title} - ${book.author} (${readStatusString})`;
     books.appendChild(bookHTML);
