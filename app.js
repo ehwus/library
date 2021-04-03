@@ -11,11 +11,13 @@ function addBookToLibrary() {
   const author = document.getElementById('newBookAuthor').value;
 
   myLibrary.push(new Book(title, author));
+  localStorage.setItem('library', JSON.stringify(myLibrary));
   displayAllBooks();
 }
 
 function removeBookFromLibrary(id) {
   myLibrary.splice(id, 1);
+  localStorage.setItem('library', JSON.stringify(myLibrary));
   displayAllBooks();
 }
 
@@ -67,4 +69,7 @@ const createReadButton = (book, index) => {
   return button;
 };
 
+if (localStorage.library) {
+  myLibrary = JSON.parse(localStorage.library);
+}
 displayAllBooks();
