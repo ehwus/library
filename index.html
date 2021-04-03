@@ -17,22 +17,24 @@
         <ul id="books"></ul>
       </div>
       <hr />
-      <button onclick="toggleFormVisibility()">New Book</button>
-      <form id="newBookForm" onsubmit="addBookToLibrary(); return false">
-        <input
-          type="text"
-          name="newBookTitle"
-          id="newBookTitle"
-          placeholder="Name of book"
-        />
-        <input
-          type="text"
-          name="newBookAuthor"
-          id="newBookAuthor"
-          placeholder="Author"
-        />
-        <button id="submit">Submit</button>
-      </form>
+      <div class="newBookFormItems">
+        <button onclick="toggleFormVisibility()">New Book</button>
+        <form id="newBookForm" onsubmit="addBookToLibrary(); return false">
+          <input
+            type="text"
+            name="newBookTitle"
+            id="newBookTitle"
+            placeholder="Name of book"
+          />
+          <input
+            type="text"
+            name="newBookAuthor"
+            id="newBookAuthor"
+            placeholder="Author"
+          />
+          <button id="submit">Submit</button>
+        </form>
+      </div>
     </div>
   </body>
 </html>
