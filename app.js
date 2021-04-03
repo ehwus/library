@@ -5,9 +5,11 @@ function Book(title, author) {
   this.author = author;
 }
 
-function addBookToLibrary(book) {
-  myLibrary.push(book);
-  console.log(myLibrary);
+function addBookToLibrary() {
+  const title = document.getElementById('newBookTitle').value;
+  const author = document.getElementById('newBookAuthor').value;
+
+  myLibrary.push(new Book(title, author));
   displayAllBooks();
 }
 

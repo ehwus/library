@@ -14,7 +14,7 @@
       <hr />
       <ul id="books"></ul>
       <button onclick="toggleFormVisibility()">Add Book</button>
-      <form id="newBookForm">
+      <form id="newBookForm" onsubmit="addBookToLibrary(); return false">
         <input
           type="text"
           name="newBookTitle"
