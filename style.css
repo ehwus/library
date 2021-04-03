@@ -57,6 +57,14 @@ button:hover {
   cursor: pointer;
 }
 
+i {
+  margin: 0 10px;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
 input {
   background: #908dae;
   border: 1px solid #f9f6f5;

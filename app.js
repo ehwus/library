@@ -51,14 +51,13 @@ function toggleFormVisibility() {
 const createBookHTMLElement = (book, index) => {
   let bookHTML = document.createElement('LI');
   bookHTML.id = index;
-  let readStatusString = book.read ? 'Read' : 'Unread';
-  bookHTML.innerHTML = `${book.title} - ${book.author} (${readStatusString})`;
+  bookHTML.innerHTML = `${book.title} - ${book.author}`;
   return bookHTML;
 };
 
 const createDeleteButton = (index) => {
-  let button = document.createElement('button');
-  button.innerHTML = 'Delete';
+  let button = document.createElement('i');
+  button.className = 'fas fa-trash';
   button.addEventListener('click', () => {
     removeBookFromLibrary(index);
   });
@@ -66,8 +65,8 @@ const createDeleteButton = (index) => {
 };
 
 const createReadButton = (book, index) => {
-  let button = document.createElement('button');
-  button.innerHTML = book.read ? 'Mark as Unread' : 'Mark as Read';
+  let button = document.createElement('i');
+  button.className = book.read ? 'far fa-check-square' : 'far fa-times-circle';
   button.addEventListener('click', function () {
     myLibrary[index].read = !myLibrary[index].read;
     displayAllBooks();
@@ -75,6 +74,7 @@ const createReadButton = (book, index) => {
   return button;
 };
 
+// MAIN
 if (localStorage.library) {
   myLibrary = JSON.parse(localStorage.library);
 }
