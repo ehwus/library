@@ -10,9 +10,13 @@
   </head>
   <body>
     <div class="container">
-      <h1>Reading List</h1>
+      <h1 class="app-name">Reading List</h1>
+      <h2 class="tagline">What are you reading?</h2>
       <hr />
-      <ul id="books"></ul>
+      <div class="booklist">
+        <ul id="books"></ul>
+      </div>
+      <hr />
       <button onclick="toggleFormVisibility()">Add Book</button>
       <form id="newBookForm" onsubmit="addBookToLibrary(); return false">
         <input

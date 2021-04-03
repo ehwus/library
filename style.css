@@ -1,7 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
+  background: #26192a;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  max-width: 1024px;
+  margin: auto;
+}
+
+.app-name {
+  font-size: 60px;
+  color: #f9f6f5;
+}
+
+.tagline {
+  font-size: 21px;
+  color: #f9f6f5;
+  font-weight: lighter;
+}
+
+hr {
+  color: #f9f6f5;
+}
+
+#books li {
+  font-size: 21px;
+  color: #f9f6f5;
+}
+
+.booklist {
+  height: 70%;
 }
 
 #newBookForm {

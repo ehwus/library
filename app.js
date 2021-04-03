@@ -1,4 +1,5 @@
 let myLibrary = [];
+const books = document.getElementById('books');
 
 function Book(title, author) {
   this.title = title;
@@ -22,7 +23,6 @@ function removeBookFromLibrary(id) {
 }
 
 function displayAllBooks() {
-  const books = document.getElementById('books');
   books.innerHTML = '';
   myLibrary.forEach((book, index) => {
     let newBook = createBookHTMLElement(book, index);
@@ -30,6 +30,12 @@ function displayAllBooks() {
     newBook.appendChild(createDeleteButton(index));
     books.appendChild(newBook);
   });
+
+  if (myLibrary.length < 1) {
+    let tempMessage = document.createElement('LI');
+    tempMessage.innerHTML = 'No books to display yet!';
+    books.appendChild(tempMessage);
+  }
 }
 
 function toggleFormVisibility() {
@@ -72,4 +78,5 @@ const createReadButton = (book, index) => {
 if (localStorage.library) {
   myLibrary = JSON.parse(localStorage.library);
 }
+
 displayAllBooks();
