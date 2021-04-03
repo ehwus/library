@@ -22,13 +22,11 @@ function removeBookFromLibrary(id) {
 function displayAllBooks() {
   const books = document.getElementById('books');
   books.innerHTML = '';
-
   myLibrary.forEach((book, index) => {
-    let bookHTML = document.createElement('LI');
-    bookHTML.id = index;
-    let readStatusString = book.read ? 'Read' : 'Unread';
-    bookHTML.innerHTML = `${book.title} - ${book.author} (${readStatusString})`;
-    books.appendChild(bookHTML);
+    let newBook = createBookHTMLElement(book, index);
+    newBook.appendChild(createReadButton(book, index));
+    newBook.appendChild(createDeleteButton(index));
+    books.appendChild(newBook);
   });
 }
 
@@ -41,5 +39,32 @@ function toggleFormVisibility() {
     form.style.display = '';
   }
 }
+
+const createBookHTMLElement = (book, index) => {
+  let bookHTML = document.createElement('LI');
+  bookHTML.id = index;
+  let readStatusString = book.read ? 'Read' : 'Unread';
+  bookHTML.innerHTML = `${book.title} - ${book.author} (${readStatusString})`;
+  return bookHTML;
+};
+
+const createDeleteButton = (index) => {
+  let button = document.createElement('button');
+  button.innerHTML = 'Delete';
+  button.addEventListener('click', () => {
+    removeBookFromLibrary(index);
+  });
+  return button;
+};
+
+const createReadButton = (book, index) => {
+  let button = document.createElement('button');
+  button.innerHTML = book.read ? 'Mark as Unread' : 'Mark as Read';
+  button.addEventListener('click', function () {
+    myLibrary[index].read = !myLibrary[index].read;
+    displayAllBooks();
+  });
+  return button;
+};
 
 displayAllBooks();
