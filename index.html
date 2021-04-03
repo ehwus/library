@@ -13,12 +13,19 @@
       <h1>Books</h1>
       <hr />
       <ul id="books"></ul>
-      <form>
+      <button>Add Book</button>
+      <form class="newBookForm">
         <input
           type="text"
-          name="newBook"
-          id="newBook"
+          name="newBookTitle"
+          id="newBookTitle"
           placeholder="Name of book"
+        />
+        <input
+          type="text"
+          name="newBookAuthor"
+          id="newBookAuthor"
+          placeholder="Author"
         />
         <button id="submit">Submit</button>
       </form>

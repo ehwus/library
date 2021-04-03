@@ -1,8 +1,12 @@
 let myLibrary = [];
 
-function Book() {}
+function Book(title, author) {
+  this.title = title;
+  this.author = author;
+}
 
-function addBookToLibrary() {}
+function addBookToLibrary(book) {
+  myLibrary.push(new Book(book.title, book.author));
+}
 
 const bookList = document.getElementById('books');
-console.log(bookList);
