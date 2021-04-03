@@ -6,11 +6,25 @@ function Book(title, author) {
 }
 
 function addBookToLibrary(book) {
-  myLibrary.push(new Book(book.title, book.author));
+  myLibrary.push(book);
+  console.log(myLibrary);
+  displayAllBooks();
+}
+
+function displayAllBooks() {
+  const books = document.getElementById('books');
+  books.innerHTML = '';
+
+  myLibrary.forEach((book) => {
+    let bookHTML = document.createElement('LI');
+    bookHTML.innerHTML = `${book.title} - ${book.author}`;
+    books.appendChild(bookHTML);
+  });
 }
 
 function toggleFormVisibility() {
-  let form = document.getElementById('newBookForm');
+  const form = document.getElementById('newBookForm');
+
   if (form.style.display === '') {
     form.style.display = 'block';
   } else {
@@ -18,4 +32,4 @@ function toggleFormVisibility() {
   }
 }
 
-const bookList = document.getElementById('books');
+displayAllBooks();
