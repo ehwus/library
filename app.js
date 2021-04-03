@@ -3,6 +3,7 @@ let myLibrary = [];
 function Book(title, author) {
   this.title = title;
   this.author = author;
+  this.read = false;
 }
 
 function addBookToLibrary() {
@@ -19,7 +20,8 @@ function displayAllBooks() {
 
   myLibrary.forEach((book) => {
     let bookHTML = document.createElement('LI');
-    bookHTML.innerHTML = `${book.title} - ${book.author}`;
+    let readStatusString = book.read ? 'Read' : 'Unread';
+    bookHTML.innerHTML = `${book.title} - ${book.author} (${readStatusString})`;
     books.appendChild(bookHTML);
   });
 }
